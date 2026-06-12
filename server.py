@@ -2,6 +2,9 @@ from fastapi import FastAPI, HTTPException, Query
 import requests
 import os
 from typing import Any, List
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
 

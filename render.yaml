@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: fillout-submission-api
+    runtime: python
+    pythonVersion: 3.11
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port 8000
+    envVars:
+      - key: FILLOUT_API_KEY
+        scope: run
+        sync: false

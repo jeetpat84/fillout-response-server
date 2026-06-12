@@ -23,6 +23,10 @@ FORM_ID = "wdUPwWRKVius"
 if not FILLOUT_API_KEY:
     raise ValueError("FILLOUT_API_KEY environment variable is required")
 
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy", "service": "fillout-submission-api"}
+
 def get_value(qs: List[dict], field_id: str) -> Any:
     """Get a specific question value by ID."""
     for q in qs:

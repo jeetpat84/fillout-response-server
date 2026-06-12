@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 import requests
 import os
 from typing import Any, List
@@ -7,6 +8,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://formial.in", "https://www.formial.in"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 FILLOUT_API_KEY = os.getenv("FILLOUT_API_KEY")
 FORM_ID = "wdUPwWRKVius"

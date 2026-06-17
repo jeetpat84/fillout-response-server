@@ -12,7 +12,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://formial.in", "https://www.formial.in","127.0.0.1:9292"],
+    allow_origins=["https://formial.in", "https://www.formial.in","http://127.0.0.1:9292"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
